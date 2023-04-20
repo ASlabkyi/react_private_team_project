@@ -387,26 +387,28 @@ const DailyCaloriesForm = () => {
               }}
             >
               Start losing weight
-            </Button>
-            {isMobile ? (
-              <DailyMobileModal
-              isMobModalVisible={isMobModalVisible}
-                dailyRate={dailyRate}
-                notAllowedProducts={notAllowedProducts}
-              />
-            ) : (
-              showModal && (
-                <DailyCalModal
-                  open={open}
-                  handleClose={handleClose}
-                  dailyRate={dailyRate}
-                  notAllowedProducts={notAllowedProducts}
-                />
-              )
-            )}
+            </Button>            
           </Box>
         </Box>
       </Box>
+      <>
+              {isMobile ? (
+                <DailyMobileModal
+                isMobModalVisible={isMobModalVisible}
+                  dailyRate={dailyRate}
+                  notAllowedProducts={notAllowedProducts}
+                />
+              ) : (
+                showModal && (
+                  <DailyCalModal
+                    open={open}
+                    handleClose={handleClose}
+                    dailyRate={dailyRate}
+                    notAllowedProducts={notAllowedProducts}
+                  />
+                )
+              )}
+            </>
     </>
   );
 };
