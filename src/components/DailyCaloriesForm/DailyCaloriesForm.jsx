@@ -24,7 +24,7 @@ const DailyCaloriesForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const id = useSelector(selectId);
-  
+
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [isMobModalVisible, setIsMobModalVisible] = useState(false);
@@ -34,7 +34,7 @@ const DailyCaloriesForm = () => {
       age !== '' &&
       weight !== '' &&
       desiredWeight !== '' &&
-      !isMobile 
+      !isMobile
     ) {
       setShowModal(true);
       setOpen(true);
@@ -44,7 +44,7 @@ const DailyCaloriesForm = () => {
   const handleClose = () => {
     setShowModal(false);
     setOpen(false);
-  } 
+  };
 
   const [height, setHeight] = useState('');
   const [heightError, setHeightError] = useState('');
@@ -390,7 +390,7 @@ const DailyCaloriesForm = () => {
             </Button>
             {isMobile ? (
               <DailyMobileModal
-              isMobModalVisible={isMobModalVisible}
+                isMobModalVisible={isMobModalVisible}
                 dailyRate={dailyRate}
                 notAllowedProducts={notAllowedProducts}
               />
