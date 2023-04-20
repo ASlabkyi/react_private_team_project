@@ -392,23 +392,23 @@ const DailyCaloriesForm = () => {
         </Box>
       </Box>
       <>
-              {isMobile ? (
-                <DailyMobileModal
-                isMobModalVisible={isMobModalVisible}
-                  dailyRate={dailyRate}
-                  notAllowedProducts={notAllowedProducts}
-                />
-              ) : (
-                showModal && (
-                  <DailyCalModal
-                    open={open}
-                    handleClose={handleClose}
-                    dailyRate={dailyRate}
-                    notAllowedProducts={notAllowedProducts}
-                  />
-                )
-              )}
-            </>
+        {isMobile ? (
+          <DailyMobileModal
+          isMobModalVisible={isMobModalVisible}
+            dailyRate={dailyRate}
+            notAllowedProducts={notAllowedProducts}
+          />
+        ) : (
+          showModal && (
+            <DailyCalModal
+              open={open}
+              handleClose={handleClose}
+              dailyRate={dailyRate}
+              notAllowedProducts={notAllowedProducts}
+            />
+          )
+        )}
+        </>
     </>
   );
 };
