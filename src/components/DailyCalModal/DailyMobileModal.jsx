@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Skeleton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -26,6 +27,18 @@ export const DailyMobileModal = ({
   const notAllowedProductsArray = Array.from(notAllowedProducts);
 
   const generate = () => {
+    if (!notAllowedProductsArray.length) {
+        return (
+          <>
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+          </>
+        );
+      }
+
     return notAllowedProductsArray.slice(0, 5).map((product, index) => (
       <ListItem
         key={index}
@@ -74,23 +87,33 @@ export const DailyMobileModal = ({
         >
           Your recommended daily calorie intake is
         </Typography>
-        <Typography
-          id="modal-modal-title"
-          variant="h6"
-          component="h2"
-          sx={{ mt: 4, mb: 2 }}
-          fontFamily="Verdana"
-          color="#264061"
-          fontStyle="normal"
-          fontWeight="900"
-          fontSize="35px"
-          lineHeight="140%"
-          marginBottom="44px"
-          textAlign="center"
-        >
-          {dailyRate}
-          <span> kcal</span>
-        </Typography>
+        {dailyRate ? (
+            <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ mt: 4, mb: 2 }}
+            fontFamily="Verdana"
+            color="#264061"
+            fontStyle="normal"
+            fontWeight="900"
+            fontSize="35px"
+            lineHeight="140%"
+            marginBottom="44px"
+            textAlign="center"
+            >
+            {dailyRate}
+            <span> kcal</span>
+            </Typography>
+        ) : (
+            <Skeleton
+            height='40px'
+            width='300px' 
+            sx={{
+              margin: '0 auto',
+            }}
+            />
+          )}
         <Box textAlign="start">
           <Typography
             sx={{ mt: 4, mb: 2 }}

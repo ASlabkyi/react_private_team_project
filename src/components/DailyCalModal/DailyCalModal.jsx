@@ -24,8 +24,6 @@ export const DailyCalModal = ({
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
 
-  //const { loading = false } = props;
-
   const style = {
     position: 'absolute',
     top: '50%',
@@ -111,25 +109,25 @@ export const DailyCalModal = ({
           Your recommended daily calorie intake is
         </Typography>
         {dailyRate ? (
-        <Typography
-          id="modal-modal-title"
-          variant="h6"
-          component="h2"
-          sx={{ mt: 4, mb: 2 }}
-          fontFamily="Verdana"
-          color="#264061"
-          fontStyle="normal"
-          fontWeight="700"
-          fontSize="35px"
-          lineHeight="140%"
-          marginBottom="44px"
-          width='300px'
-          textAlign="center"
-          margin='0 auto'
-        >
-          {dailyRate}
-          <span> kcal</span>
-        </Typography>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ mt: 4, mb: 2 }}
+            fontFamily="Verdana"
+            color="#264061"
+            fontStyle="normal"
+            fontWeight="700"
+            fontSize="35px"
+            lineHeight="140%"
+            marginBottom="44px"
+            width='300px'
+            textAlign="center"
+            margin='0 auto'
+          >
+            {dailyRate}
+            <span> kcal</span>
+          </Typography>
         ) : (
           <Skeleton
           height='40px'
