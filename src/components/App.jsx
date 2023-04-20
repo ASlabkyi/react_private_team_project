@@ -4,7 +4,7 @@ import { lazy, useEffect } from 'react';
 import { PublicRout } from './Publick/Publick';
 import { PrivateRout } from './PrivateRout/PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing, selectIsLoggedIn } from 'redux/auth/selectors';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { fetchGetUserInfo } from 'redux/auth/operations';
 
 const Calculator = lazy(() => import('../pages/Calculator/Calculator'));
@@ -16,7 +16,6 @@ const Registration = lazy(() => import('../pages/Registration/Registration'));
 export const App = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isRefreshng = useSelector(selectIsRefreshing);
   const token = useSelector(state => state.auth.token);
 
   useEffect(() => {

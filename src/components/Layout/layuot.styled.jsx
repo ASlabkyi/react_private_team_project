@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-const baseTheme = {
-  media: {
-    tablet: '(min-width:768px)',
-    desktop: '(min-width:1280px)',
-  },
-};
-
 export const Header = styled.header`
   display: flex;
   border-bottom: 1px solid var(--gray-text-color);
