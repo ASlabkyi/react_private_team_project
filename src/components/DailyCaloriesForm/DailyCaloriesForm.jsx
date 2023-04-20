@@ -5,6 +5,7 @@ import {
   calculateDailyLoggedIn,
 } from '../../redux/dailyRate/operations';
 import { DailyCalModal } from 'components/DailyCalModal/DailyCalModal';
+import { DailyMobileModal } from 'components/DailyCalModal/DailyMobileModal';
 import { selectId, selectIsLoggedIn } from '../../redux/auth/selectors';
 import {
   FormControl,
@@ -23,22 +24,27 @@ const DailyCaloriesForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const id = useSelector(selectId);
-
-  console.log(id);
-
+  
+  const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [isMobModalVisible, setIsMobModalVisible] = useState(false);
   const handleOpen = () => {
     if (
       height !== '' &&
       age !== '' &&
       weight !== '' &&
       desiredWeight !== '' &&
-      window.innerWidth > 767
+      !isMobile 
     ) {
+      setShowModal(true);
       setOpen(true);
+      setIsMobModalVisible(true);
     }
   };
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setShowModal(false);
+    setOpen(false);
+  } 
 
   const [height, setHeight] = useState('');
   const [heightError, setHeightError] = useState('');
@@ -50,7 +56,6 @@ const DailyCaloriesForm = () => {
   const [desiredWeightError, setDesiredWeightError] = useState('');
   const [bloodType, setBloodType] = useState(Number(1));
   const [bloodTypeError, setBloodTypeError] = useState('');
-  console.log(bloodType);
 
   const handleHeightChange = event => {
     const input = event.target.value;
@@ -107,7 +112,6 @@ const DailyCaloriesForm = () => {
   const [dailyRate, setDailyRate] = useState(0);
   const [notAllowedProducts, setNotAllowedProducts] = useState(0);
   const data = { height, weight, age, desiredWeight, bloodType };
-  console.log(data);
 
   const handleCalculate = () => {
     if (isLoggedIn) {
@@ -166,12 +170,6 @@ const DailyCaloriesForm = () => {
       setBloodType('');
     }
   };
-
-  console.log(typeof height);
-  console.log(typeof age);
-  console.log(typeof weight);
-  console.log(typeof desiredWeight);
-  console.log(typeof bloodType);
 
   return (
     <>
@@ -390,14 +388,22 @@ const DailyCaloriesForm = () => {
             >
               Start losing weight
             </Button>
-            <DailyCalModal
-              open={open}
-              handleClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-              dailyRate={dailyRate}
-              notAllowedProducts={notAllowedProducts}
-            />
+            {isMobile ? (
+              <DailyMobileModal
+              isMobModalVisible={isMobModalVisible}
+                dailyRate={dailyRate}
+                notAllowedProducts={notAllowedProducts}
+              />
+            ) : (
+              showModal && (
+                <DailyCalModal
+                  open={open}
+                  handleClose={handleClose}
+                  dailyRate={dailyRate}
+                  notAllowedProducts={notAllowedProducts}
+                />
+              )
+            )}
           </Box>
         </Box>
       </Box>

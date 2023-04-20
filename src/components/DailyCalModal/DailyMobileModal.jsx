@@ -3,47 +3,22 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  Modal,
   Box,
   Typography,
   Button,
   List,
   ListItem,
   ListItemText,
-  Skeleton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import CloseIcon from '@mui/icons-material/Close';
 
-export const DailyCalModal = ({
-  open,
-  handleClose,
+export const DailyMobileModal = ({
+    isMobModalVisible,
   dailyRate,
   notAllowedProducts,
 }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
-
-  //const { loading = false } = props;
-
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '45%',
-    transform: 'translate(-50%, -50%)',
-    width: { xs: '100vw', md: '672px' },
-    height: 'auto',
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    padding: 0,
-  };
-  const iconStyle = {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
-    width: '20px',
-    height: '20px',
-  };
 
   const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -51,18 +26,6 @@ export const DailyCalModal = ({
   const notAllowedProductsArray = Array.from(notAllowedProducts);
 
   const generate = () => {
-    if (!notAllowedProductsArray.length) {
-      return (
-        <>
-          <Skeleton animation="wave" />
-          <Skeleton animation="wave" />
-          <Skeleton animation="wave" />
-          <Skeleton animation="wave" />
-          <Skeleton animation="wave" />
-        </>
-      );
-    }
-
     return notAllowedProductsArray.slice(0, 5).map((product, index) => (
       <ListItem
         key={index}
@@ -88,9 +51,10 @@ export const DailyCalModal = ({
   };
 
   return (
-    <Modal open={open} onClose={handleClose}>
-      <Box sx={style} textAlign="center">
-        <CloseIcon onClick={handleClose} style={iconStyle} />
+      <Box 
+      open='isMobModalVisible'
+      textAlign="center" 
+      >
         <Typography
           id="modal-modal-title"
           variant="h6"
@@ -110,7 +74,6 @@ export const DailyCalModal = ({
         >
           Your recommended daily calorie intake is
         </Typography>
-        {dailyRate ? (
         <Typography
           id="modal-modal-title"
           variant="h6"
@@ -119,26 +82,15 @@ export const DailyCalModal = ({
           fontFamily="Verdana"
           color="#264061"
           fontStyle="normal"
-          fontWeight="700"
+          fontWeight="900"
           fontSize="35px"
           lineHeight="140%"
           marginBottom="44px"
-          width='300px'
           textAlign="center"
-          margin='0 auto'
         >
           {dailyRate}
           <span> kcal</span>
         </Typography>
-        ) : (
-          <Skeleton
-          height='40px'
-          width='300px' 
-          sx={{
-            margin: '0 auto',
-          }}
-          />
-        )}
         <Box textAlign="start">
           <Typography
             sx={{ mt: 4, mb: 2 }}
@@ -166,7 +118,7 @@ export const DailyCalModal = ({
           type="submit"
           onClick={() => {
             if (isLoggedIn) {
-              handleClose();
+              navigate('/diary');
             } else {
               navigate('/register');
             }
@@ -198,6 +150,5 @@ export const DailyCalModal = ({
           Start losing weight
         </Button>
       </Box>
-    </Modal>
   );
 };
