@@ -1,3 +1,4 @@
+import Favicon from 'react-favicon';
 import { Routes, Route } from 'react-router';
 import { Layout } from 'components/Layout/Layout';
 import { lazy, useEffect } from 'react';
@@ -26,36 +27,40 @@ export const App = () => {
   //   <p>ads</p>
   // ) : (
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+    <>
+      <Favicon url="./images/bg-pictures/desktop/banana.png" />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
 
-        <Route
-          path="/login"
-          element={
-            <PublicRout redirectTo="/calculator" component={<Login />} />
-          }
-        />
+          <Route
+            path="/login"
+            element={
+              <PublicRout redirectTo="/calculator" component={<Login />} />
+            }
+          />
 
-        <Route
-          path="/register"
-          element={
-            <PublicRout redirectTo="/calculator" component={<Registration />} />
-          }
-        />
+          <Route
+            path="/register"
+            element={
+              <PublicRout redirectTo="/calculator" component={<Registration />} />
+            }
+          />
 
-        <Route
-          path="/diary"
-          element={<PrivateRout redirectTo="/login" component={<Diary />} />}
-        />
+          <Route
+            path="/diary"
+            element={<PrivateRout redirectTo="/login" component={<Diary />} />}
+          />
 
-        <Route
-          path="/calculator"
-          element={
-            <PrivateRout redirectTo="/login" component={<Calculator />} />
-          }
-        />
-      </Route>
-    </Routes>
+          <Route
+            path="/calculator"
+            element={
+              <PrivateRout redirectTo="/login" component={<Calculator />} />
+            }
+          />
+        </Route>
+      </Routes>
+    </>
+    
   );
 };
