@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/react_private_team_project/static/css/main.d9962b63.css",
+    "main.js": "/react_private_team_project/static/js/main.7ecc6cc5.js",
+    "static/js/118.4938967f.chunk.js": "/react_private_team_project/static/js/118.4938967f.chunk.js",
+    "static/css/16.d6da1d22.chunk.css": "/react_private_team_project/static/css/16.d6da1d22.chunk.css",
+    "static/js/16.e385c5f3.chunk.js": "/react_private_team_project/static/js/16.e385c5f3.chunk.js",
+    "static/js/597.ae42793a.chunk.js": "/react_private_team_project/static/js/597.ae42793a.chunk.js",
+    "static/js/297.3dcd5774.chunk.js": "/react_private_team_project/static/js/297.3dcd5774.chunk.js",
+    "static/js/500.b9b97f7c.chunk.js": "/react_private_team_project/static/js/500.b9b97f7c.chunk.js",
+    "static/js/303.d0671ced.chunk.js": "/react_private_team_project/static/js/303.d0671ced.chunk.js",
+    "static/js/680.270e08fc.chunk.js": "/react_private_team_project/static/js/680.270e08fc.chunk.js",
+    "static/js/60.155b2de3.chunk.js": "/react_private_team_project/static/js/60.155b2de3.chunk.js",
+    "static/js/38.8f5d86c1.chunk.js": "/react_private_team_project/static/js/38.8f5d86c1.chunk.js",
+    "static/js/326.68b4f00d.chunk.js": "/react_private_team_project/static/js/326.68b4f00d.chunk.js",
+    "static/media/strawberry.png": "/react_private_team_project/static/media/strawberry.35fd7de9fe998b5b39c9.png",
+    "static/media/banana.png": "/react_private_team_project/static/media/banana.f24511a2d04fd6c36038.png",
+    "static/media/Verdana.woff2": "/react_private_team_project/static/media/Verdana.d45b6d790628e0df6624.woff2",
+    "static/media/leaves_main.png": "/react_private_team_project/static/media/leaves_main.07eae1498dc43a8c9410.png",
+    "static/media/leaves.png": "/react_private_team_project/static/media/leaves.26ac2ab76f39e1302fcf.png",
+    "static/media/side-bar-leaves.png": "/react_private_team_project/static/media/side-bar-leaves.07ec7143c40752d1b8ad.png",
+    "static/media/sideBarLeaves768_1x.png": "/react_private_team_project/static/media/sideBarLeaves768_1x.d47e11c7ecbda7cf9aa0.png",
+    "index.html": "/react_private_team_project/index.html",
+    "static/media/stain.svg": "/react_private_team_project/static/media/stain.8e9f2abb49c97a092b4435e82ef68ef1.svg",
+    "main.d9962b63.css.map": "/react_private_team_project/static/css/main.d9962b63.css.map",
+    "main.7ecc6cc5.js.map": "/react_private_team_project/static/js/main.7ecc6cc5.js.map",
+    "118.4938967f.chunk.js.map": "/react_private_team_project/static/js/118.4938967f.chunk.js.map",
+    "16.d6da1d22.chunk.css.map": "/react_private_team_project/static/css/16.d6da1d22.chunk.css.map",
+    "16.e385c5f3.chunk.js.map": "/react_private_team_project/static/js/16.e385c5f3.chunk.js.map",
+    "597.ae42793a.chunk.js.map": "/react_private_team_project/static/js/597.ae42793a.chunk.js.map",
+    "297.3dcd5774.chunk.js.map": "/react_private_team_project/static/js/297.3dcd5774.chunk.js.map",
+    "500.b9b97f7c.chunk.js.map": "/react_private_team_project/static/js/500.b9b97f7c.chunk.js.map",
+    "303.d0671ced.chunk.js.map": "/react_private_team_project/static/js/303.d0671ced.chunk.js.map",
+    "680.270e08fc.chunk.js.map": "/react_private_team_project/static/js/680.270e08fc.chunk.js.map",
+    "60.155b2de3.chunk.js.map": "/react_private_team_project/static/js/60.155b2de3.chunk.js.map",
+    "38.8f5d86c1.chunk.js.map": "/react_private_team_project/static/js/38.8f5d86c1.chunk.js.map",
+    "326.68b4f00d.chunk.js.map": "/react_private_team_project/static/js/326.68b4f00d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9962b63.css",
+    "static/js/main.7ecc6cc5.js"
+  ]
+}
