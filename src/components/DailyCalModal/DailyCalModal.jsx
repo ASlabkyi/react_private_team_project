@@ -140,7 +140,7 @@ export const DailyCalModal = ({
             if (isLoggedIn) {
               handleClose();
             } else {
-              window.location.href = '/goit_react_team_project/register';
+              window.location.href = '/react_private_team_project/register';
             }
           }}
           sx={{

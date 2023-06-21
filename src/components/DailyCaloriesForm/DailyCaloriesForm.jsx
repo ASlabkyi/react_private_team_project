@@ -5,6 +5,7 @@ import {
   calculateDailyLoggedIn,
 } from '../../redux/dailyRate/operations';
 import { DailyCalModal } from 'components/DailyCalModal/DailyCalModal';
+import { DailyCalText } from 'components/DailyCalModal/DailyCalText';
 import { selectId, selectIsLoggedIn } from '../../redux/auth/selectors';
 import {
   FormControl,
@@ -27,6 +28,8 @@ const DailyCaloriesForm = () => {
   console.log(id);
 
   const [open, setOpen] = React.useState(false);
+  const [showText, setShowText] = useState(false);
+
   const handleOpen = () => {
     if (
       height !== '' &&
@@ -117,6 +120,7 @@ const DailyCaloriesForm = () => {
           setDailyRate(result.dailyRate);
           setNotAllowedProducts(result.notAllowedProducts);
           setOpen(true);
+          setShowText(true);
         })
         .catch(error => console.log('error', error));
     } else {
@@ -126,6 +130,7 @@ const DailyCaloriesForm = () => {
           setDailyRate(result.dailyRate);
           setNotAllowedProducts(result.notAllowedProducts);
           setOpen(true);
+          setShowText(true);
         })
         .catch(error => console.log('error', error));
     }
@@ -361,7 +366,7 @@ const DailyCaloriesForm = () => {
             <Button
               variant="contained"
               type="submit"
-              onClick={handleOpen}
+              onClick={handleCalculate}
               sx={{
                 width: '210px',
                 height: '43px',
@@ -390,6 +395,12 @@ const DailyCaloriesForm = () => {
             >
               Start losing weight
             </Button>
+            {showText && isMobile ? 
+            <DailyCalText
+              dailyRate={dailyRate}
+              notAllowedProducts={notAllowedProducts}
+              handleClose={handleClose}
+            /> :
             <DailyCalModal
               open={open}
               handleClose={handleClose}
@@ -397,7 +408,7 @@ const DailyCaloriesForm = () => {
               aria-describedby="modal-modal-description"
               dailyRate={dailyRate}
               notAllowedProducts={notAllowedProducts}
-            />
+            />}
           </Box>
         </Box>
       </Box>
